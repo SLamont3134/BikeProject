@@ -6,10 +6,11 @@ import java.util.Random;
 
 //Create a new driver class named BikeList that contains a main method.
 public class BikeList {
-  public static void main(String[] arg){
+
+  public static void main(String[] arg) {
     //You will be required to store both Mountain and Road bikes so create an
     // ArrayList named bikes that is based on the Superclass.
-    ArrayList<Bike> myBikes = new ArrayList<Bike>();
+    ArrayList<Bike> bikes = new ArrayList<Bike>();
 
     //Add two integer local variables named mountainBikeSales and roadBikeSales that
     // are both initialized to zero.
@@ -17,14 +18,13 @@ public class BikeList {
     int roadBikeSales = 0;
 
     //Call the fillArray method from main under the local variable declarations.
-    fillArray(myBikes);
+    fillArray(bikes);
 
     //Call the displayStock() method from main under the fillArray() method call.
-    displayStock(myBikes);
+    displayStock(bikes);
 
     //Call the displayBikeNumbers() method as the last method call in main.
-    displayBikeNumbers(myBikes);
-
+    displayBikeNumbers(bikes);
 
 
   }
@@ -34,15 +34,14 @@ public class BikeList {
   // If the random number is less than one then add a mountain bike to the list otherwise
   // add a roadbike.  The method should add 10 bikes to the ArrayList.
 
-  public static void fillArray(ArrayList<Bike> myBikes){
+  public static void fillArray(ArrayList<Bike> bikes) {
     Random rand = new Random();
-    for(int i=0; i<10; i++){
+    for (int i = 0; i < 10; i++) {
       int randInt = rand.nextInt(2);
-      if(randInt < 1){
-        myBikes.add(new MountainBike());
-      }
-      else{
-        myBikes.add(new RoadBike());
+      if (randInt < 1) {
+        bikes.add(new MountainBike());
+      } else {
+        bikes.add(new RoadBike());
       }
     }
 
@@ -50,8 +49,8 @@ public class BikeList {
 
   //Create a displayStock method that takes the bikes ArrayList as a parameter.
   // Use an enhanced for to display the bikes to the console.
-  public static void displayStock(ArrayList<Bike> myBikes){
-    for(Bike bike: myBikes){
+  public static void displayStock(ArrayList<Bike> bikes) {
+    for (Bike bike : bikes) {
       System.out.println(bike.toString());
     }
   }
@@ -63,10 +62,10 @@ public class BikeList {
   // of a mountain bike, increment the bikesSold variable if the if statement returns true.
   // Return the value held in bikesSold.
 
-  public static int calculateStock(ArrayList<Bike> myBikes){
+  public static int calculateStock(ArrayList<Bike> bikes) {
     int bikesSold = 0;
-    for(Bike bike: myBikes){
-      if(bike instanceof MountainBike){
+    for (Bike bike : bikes) {
+      if (bike instanceof MountainBike) {
         bikesSold++;
       }
     }
@@ -82,11 +81,11 @@ public class BikeList {
   // We have 4 Mountain Bikes in stock
   // We have 6 Road Bikes in stock
 
-  public static int displayBikeNumbers(ArrayList<Bike> myBikes){
+  public static int displayBikeNumbers(ArrayList<Bike> bikes) {
     int mb;
     int rb;
-    mb = calculateStock(myBikes);
-    rb = myBikes.size() - mb;
+    mb = calculateStock(bikes);
+    rb = bikes.size() - mb;
     System.out.println("\nStock Levels");
     System.out.println("\nWe have " + mb + " Mountain Bikes in stock");
     System.out.println("\nWe have " + rb + " Road Bikes in stock");
