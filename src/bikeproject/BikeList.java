@@ -37,7 +37,7 @@ public class BikeList {
   public static void fillArray(ArrayList<Bike> myBikes){
     Random rand = new Random();
     for(int i=0; i<10; i++){
-      int randInt = rand.nextInt((1+0)+1)+0;
+      int randInt = rand.nextInt(2);
       if(randInt < 1){
         myBikes.add(new MountainBike());
       }
