@@ -30,7 +30,7 @@ public class RoadBike extends Bike implements RoadParts {
     return
         super.toString() + "\nThis Roadbike bike has " + this.tyreWidth
             + "mm tyres and a post height of "
-            + this.postHeight + ".";
+            + this.postHeight + " \nthis bike is best used for " + BikeUses.track + ".";
 
   }
 
